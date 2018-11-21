@@ -300,7 +300,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Buttons_Script.cs" />
     <Compile Include="Assets\Buttons_Scripts.cs" />
   </ItemGroup>
   <ItemGroup>
