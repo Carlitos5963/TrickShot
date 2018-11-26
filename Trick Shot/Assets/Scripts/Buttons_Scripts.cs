@@ -17,21 +17,19 @@ public class Buttons_Scripts : MonoBehaviour
 
     public void LoadLevel1()
     {
-        //Additive used to load screen over main menu scene
         Debug.Log("Attempting to load level 1");
-        //SceneManager.LoadScene("Level1", LoadSceneMode.Additive);
         SceneManager.LoadScene("Level1", LoadSceneMode.Single);
 
     }
     public void LoadLevel2()
     {
         Debug.Log("Attempting to load level 2");
-        SceneManager.LoadScene("Level2", LoadSceneMode.Additive);
+        SceneManager.LoadScene("Level2", LoadSceneMode.Single);
     }
     public void LoadLevel3()
     {
         Debug.Log("Attempting to load level 3");
-        SceneManager.LoadScene("Level3", LoadSceneMode.Additive);
+        SceneManager.LoadScene("Level3", LoadSceneMode.Single);
     }
 
     public void ExitGame()

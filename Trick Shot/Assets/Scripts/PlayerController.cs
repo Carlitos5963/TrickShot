@@ -10,29 +10,32 @@ public class PlayerController : MonoBehaviour {
     Vector2 barrelPosition;
 
     public float smooth = 4.0f;
-    public float tiltAngle = 80.0f;
+    public float tiltAngle = 90.0f;
 
+    //User can control rotation of player
     void Update()
     {
-        // Smoothly tilts a transform towards a target rotation.
+        // Tilts player with arrow keys as determined in Input settings
         float tiltAroundZ = Input.GetAxis("Horizontal") * tiltAngle;
         float tiltAroundX = Input.GetAxis("Vertical") * tiltAngle;
  
         Quaternion target = Quaternion.Euler(tiltAroundX, 0, tiltAroundZ);
 
         // Dampen towards the target rotation
-        transform.rotation = Quaternion.SlerpUnclamped(transform.rotation, target, Time.deltaTime * smooth);
+        transform.rotation = Quaternion.Lerp(transform.rotation, target, Time.deltaTime * smooth);
         if (Input.GetButtonDown("Fire1"))
         {
-            shoot();
+            Shoot();
         }
     }
 
-    public void shoot()
+    //Will instatiate bullet object when called at the tip of gun barrel
+    //Will also destroy bullets after 5 seconds
+    public void Shoot()
     {
         barrelPosition = barrel.transform.position;
         var copy = Instantiate(bullet, barrelPosition, Quaternion.identity);
-        Destroy(copy, 3.0f);
+        Destroy(copy, 5.0f);
 
     }
 }
