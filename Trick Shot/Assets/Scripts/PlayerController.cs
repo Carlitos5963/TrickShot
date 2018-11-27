@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
-    private Rigidbody2D rb2d;
+    //private Rigidbody2D rb2d;
     public GameObject bullet;
     public GameObject barrel;
     Vector2 barrelPosition;
 
     public float smooth = 4.0f;
-    public float tiltAngle = 90.0f;
+    public float tiltAngle = 85.0f;
 
     //User can control rotation of player
     void Update()
@@ -22,7 +22,9 @@ public class PlayerController : MonoBehaviour {
         Quaternion target = Quaternion.Euler(tiltAroundX, 0, tiltAroundZ);
 
         // Dampen towards the target rotation
-        transform.rotation = Quaternion.Lerp(transform.rotation, target, Time.deltaTime * smooth);
+        transform.rotation = Quaternion.Lerp(transform.rotation, target, Time.deltaTime);
+
+        //Use Either mouse click or ctrl to fire
         if (Input.GetButtonDown("Fire1"))
         {
             Shoot();
@@ -35,10 +37,6 @@ public class PlayerController : MonoBehaviour {
     {
         barrelPosition = barrel.transform.position;
         var copy = Instantiate(bullet, barrelPosition, Quaternion.identity);
-        Destroy(copy, 5.0f);
-
+        Destroy(copy, 5f);
     }
 }
-
-//TO-DO
-//In this script, figure out how to instantiate bullet at barrels position

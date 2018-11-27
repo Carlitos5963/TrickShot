@@ -13,17 +13,18 @@ public class BulletController : MonoBehaviour {
     private float bulletAngle;
 
     private Rigidbody2D rb;
-    
+
+
+    private float x, y, z;
 
 	// As soon as bullet is created, this will give the velocity
 	void Start () {
-        rb = GetComponent<Rigidbody2D>();
         playerVec = player.transform.position;
         barrelVec = barrel.transform.position;
         C = barrelVec - playerVec;
         bulletAngle = Mathf.Atan2(C.y, C.x);
         //Giving the velocity proportional to the degree the gun is pointing
-        //Cos and Sin functions take radians
+        rb = GetComponent<Rigidbody2D>();
         rb.velocity = new Vector2(Mathf.Cos(bulletAngle), Mathf.Sin(bulletAngle)) * speed;
 
     }
