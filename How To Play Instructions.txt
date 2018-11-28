@@ -1,0 +1,5 @@
+Left Arrow - Turn right
+Right Arrow - Turn left
+Ctrl - Shoot bullets
+
+The objective of the game is to shoot all of the golden blocks using the walls to bounce your bullets off of
