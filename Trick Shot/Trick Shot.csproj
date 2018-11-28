@@ -303,6 +303,7 @@
     <Compile Include="Assets\Scripts\BulletController.cs" />
     <Compile Include="Assets\Scripts\Buttons_Scripts.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\TargetController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\ShooterSpritePack\ReadMe.txt" />

@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour {
         Quaternion target = Quaternion.Euler(tiltAroundX, 0, tiltAroundZ);
 
         // Dampen towards the target rotation
-        transform.rotation = Quaternion.Lerp(transform.rotation, target, Time.deltaTime);
+        transform.rotation = Quaternion.Lerp(transform.rotation, target, Time.deltaTime * smooth);
 
         //Use Either mouse click or ctrl to fire
         if (Input.GetButtonDown("Fire1"))
