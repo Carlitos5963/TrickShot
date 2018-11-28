@@ -26,6 +26,12 @@ public class Buttons_Scripts : MonoBehaviour
         Debug.Log("Attempting to load level 2");
         SceneManager.LoadScene("Level2", LoadSceneMode.Single);
     }
+    public void LoadCredits()
+    {
+        Debug.Log("Attempting to load Credits");
+        SceneManager.LoadScene("Credits", LoadSceneMode.Single);
+    }
+
     public void LoadLevel3()
     {
         Debug.Log("Attempting to load level 3");
